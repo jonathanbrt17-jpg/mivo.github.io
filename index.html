@@ -1,54 +1,67 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>MIVO — Accueil</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIVO — Accueil</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Script -->
+    <script defer src="script.js"></script>
 </head>
 
 <body>
+
+<!-- HEADER -->
 <header class="header">
-  <div class="wrap">
-    <div class="logo">
-      <img src="logo-mivo.png" alt="Logo MIVO">
-      <div class="brand">
-        <h1>MIVO</h1>
-        <p>Parler, c’est déjà guérir.</p>
-      </div>
+    <div class="wrap">
+
+        <div class="logo">
+            <img src="logo-mivo.png" alt="Logo MIVO">
+            <div class="brand">
+                <h1>MIVO</h1>
+                <p>Parler, c’est déjà guérir.</p>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html">À propos</a>
+            <a href="services.html">Services</a>
+            <a href="signalement.html">Signalement</a>
+            <a href="contact.html">Contact</a>
+            <a href="don.html" class="don">Faire un don</a>
+        </nav>
+
+        <button id="modeSwitch">🌙 Mode sombre</button>
     </div>
-
-    <nav class="nav">
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="services.html">Services</a>
-      <a href="signalement.html">Signalement</a>
-      <a href="contact.html">Contact</a>
-      <a href="don.html" class="don">Faire un don</a>
-    </nav>
-
-    <button id="modeSwitch">🌙 Mode sombre</button>
-  </div>
 </header>
 
+<!-- MAIN -->
 <main class="container">
-  <section class="section">
-    <h2>Bienvenue sur MIVO</h2>
-    <p>
-      MIVO est une association dédiée à la santé mentale, à la prévention du harcèlement 
-      et du cyberharcèlement. Ici, tu trouveras un soutien gratuit, confidentiel et bienveillant.
-    </p>
+    <section class="section">
+        <h2>Bienvenue sur MIVO</h2>
 
-    <a href="signalement.html" class="btn-big">Faire un signalement</a>
-    <a href="contact.html" class="btn-big second">Contacter un bénévole</a>
-  </section>
+        <p>
+            MIVO est une association dédiée à la santé mentale, à la prévention du harcèlement 
+            et du cyberharcèlement. Tu peux obtenir un soutien gratuit, anonyme et bienveillant.
+        </p>
+
+        <div class="home-buttons">
+            <a href="signalement.html" class="btn-big">Faire un signalement</a>
+            <a href="contact.html" class="btn-big second">Contacter un bénévole</a>
+        </div>
+    </section>
 </main>
 
+<!-- FOOTER -->
 <footer>
-  <div class="container">
-    © 2025 MIVO — Association d’aide et de prévention
-  </div>
+    <div class="container">
+        © 2025 MIVO — Association d’aide et de prévention
+    </div>
 </footer>
+
 </body>
 </html>
