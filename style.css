@@ -1,100 +1,75 @@
-/* Style clair moderne pour MIVO */
-
-:root{
-  --primary:#2f59c9;
-  --accent:#6f8ff6;
-  --bg:#f7f8fb;
-  --card:#ffffff;
-  --text:#1f2b3a;
-}
-
-*{box-sizing:border-box}
-html,body{
-  margin:0;
-  font-family:Inter,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f8;
 }
 
 /* HEADER */
-header{
-  background:linear-gradient(90deg,var(--primary),var(--accent));
-  color:#fff;
-  padding:15px 0;
-}
-header .wrap{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  width:92%;
-  max-width:1100px;
-  margin:auto;
-}
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.logo img{
-  height:60px;
-  width:auto;
-  background:#fff;
-  padding:5px;
-  border-radius:8px;
-}
-.nav{
-  display:flex;
-  gap:10px;
-}
-.nav a{
-  background:rgba(255,255,255,0.13);
-  padding:8px 14px;
-  border-radius:6px;
-  color:#fff;
-  font-weight:600;
-}
-.nav a:hover{
-  background:rgba(255,255,255,0.2);
+.header {
+    background: linear-gradient(90deg, #3f68ff, #3552cc);
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-/* CONTENT */
-.container{
-  width:92%;
-  max-width:1100px;
-  margin:25px auto;
+.logo {
+    width: 80px;
+    height: auto;
+    border-radius: 14px;
+    background: white;
+    padding: 5px;
 }
 
-.section{
-  background:var(--card);
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:16px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+.header-text h1 {
+    margin: 0;
+    font-size: 30px;
 }
 
-/* HERO */
-.hero{
-  background:var(--card);
-  padding:28px;
-  border-radius:12px;
-  box-shadow:0 6px 20px rgba(20,30,60,0.06);
+.header-text p {
+    margin: 0;
+    opacity: 0.9;
 }
 
-/* BUTTON */
-.btn{
-  background:var(--primary);
-  color:#fff;
-  padding:12px 18px;
-  display:inline-block;
-  border-radius:10px;
-  font-weight:700;
+/* NAVIGATION */
+nav {
+    margin-left: auto;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* CONTENU */
+.content {
+    padding: 30px;
+}
+
+h2 {
+    color: #2b2b2b;
+    font-size: 28px;
+}
+
+p {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.6;
 }
 
 /* FOOTER */
-footer{
-  margin-top:25px;
-  padding:20px;
-  text-align:center;
-  color:#fff;
-  background:linear-gradient(90deg,var(--primary),var(--accent));
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #e3e5ef;
+    margin-top: 40px;
+    color: #333;
+    font-size: 15px;
 }
