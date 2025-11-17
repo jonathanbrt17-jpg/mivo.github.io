@@ -27,8 +27,6 @@
       <a href="signalement.html" class="active">Signalement</a>
       <a href="contact.html">Contact</a>
       <a href="don.html" class="don">Faire un don</a>
-
-      <!-- 🔴 Bouton URGENCE ajouté -->
       <a href="urgence.html" class="urgence">⚠️ Urgence</a>
     </nav>
 
@@ -41,16 +39,36 @@
     <h2>Faire un signalement</h2>
 
     <p>
-      Si tu es victime ou témoin de harcèlement, cyberharcèlement ou d’une situation qui met quelqu’un en danger,
-      tu peux nous envoyer un signalement. Nous te répondrons dès que possible, avec bienveillance et confidentialité.
+      Si tu es victime ou témoin de harcèlement, cyberharcèlement ou d’une situation dangereuse,
+      remplis ce formulaire. Nous te répondrons rapidement et en toute confidentialité.
     </p>
 
     <form action="https://formspree.io/f/mzbldwbg" method="POST" class="form">
-      
-      <label for="nom">Nom (optionnel) :</label>
-      <input type="text" id="nom" name="Nom">
 
-      <label for="message">Décris la situation :</label>
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="Nom" required>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="Prenom" required>
+
+      <label for="email">Adresse mail :</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="telephone">Numéro de téléphone :</label>
+      <input type="tel" id="telephone" name="Téléphone" required>
+
+      <label for="raison">Raison du signalement :</label>
+      <select id="raison" name="Raison" required>
+        <option value="">Choisir une raison</option>
+        <option value="Harcèlement scolaire">Harcèlement scolaire</option>
+        <option value="Cyberharcèlement">Cyberharcèlement</option>
+        <option value="Menaces / Mise en danger">Menaces / Mise en danger</option>
+        <option value="Violences (physiques/verbales/psychologiques)">Violences</option>
+        <option value="Usurpation d'identité">Usurpation d'identité</option>
+        <option value="Autre">Autre</option>
+      </select>
+
+      <label for="message">Explique la situation :</label>
       <textarea id="message" name="Message" required></textarea>
 
       <button type="submit" class="btn-big">Envoyer</button>
