@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>MIVO — Signalement</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
@@ -24,7 +24,7 @@
       <a href="index.html">Accueil</a>
       <a href="apropos.html">À propos</a>
       <a href="services.html">Services</a>
-      <a href="signalement.html">Signalement</a>
+      <a href="signalement.html" class="active">Signalement</a>
       <a href="contact.html">Contact</a>
       <a href="don.html" class="don">Faire un don</a>
     </nav>
@@ -37,12 +37,18 @@
   <section class="section">
     <h2>Faire un signalement</h2>
 
-    <form action="https://formspree.io/f/mzbldwbg" method="POST" class="form">
-      <label>Nom (optionnel) :</label>
-      <input type="text" name="Nom">
+    <p>
+      Si tu es victime ou témoin de harcèlement, cyberharcèlement ou d’une situation qui met quelqu’un en danger,
+      tu peux nous envoyer un signalement. Nous te répondrons dès que possible, avec bienveillance et confidentialité.
+    </p>
 
-      <label>Décris la situation :</label>
-      <textarea name="Message" required></textarea>
+    <form action="https://formspree.io/f/mzbldwbg" method="POST" class="form">
+      
+      <label for="nom">Nom (optionnel) :</label>
+      <input type="text" id="nom" name="Nom">
+
+      <label for="message">Décris la situation :</label>
+      <textarea id="message" name="Message" required></textarea>
 
       <button type="submit" class="btn-big">Envoyer</button>
     </form>
@@ -52,5 +58,7 @@
 <footer>
   <div class="container">© 2025 MIVO</div>
 </footer>
+
 </body>
 </html>
+
