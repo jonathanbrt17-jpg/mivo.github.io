@@ -1,2 +1,2 @@
-# mivo.github.io
+# mivo.one
 Site officiel de l'association MIVO
