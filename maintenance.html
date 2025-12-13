@@ -1,74 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MIVO — Maintenance</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site en maintenance</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#3f68ff,#3552cc);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center;
-}
-
-.box {
-  background: rgba(0,0,0,0.25);
-  padding: 30px;
-  border-radius: 14px;
-  max-width: 420px;
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  margin-top: 15px;
-}
-
-button {
-  margin-top: 15px;
-  padding: 12px;
-  width: 100%;
-  border-radius: 8px;
-  border: none;
-  font-weight: bold;
-  background: #fff;
-  color: #3552cc;
-  cursor: pointer;
-}
-</head>
-
-<body>
-
-<div class="box">
-  <h1>🚧 Site en maintenance</h1>
-  <p>MIVO revient très bientôt.<br>Merci de votre patience 💙</p>
-
-  <input type="password" id="code" placeholder="Accès administrateur">
-  <button onclick="unlock()">Accéder</button>
-</div>
-
-<script>
-const SECRET = "FONDA-MIVO"; // 🔴 CHANGE CE CODE
-
-function unlock() {
-  const input = document.getElementById("code").value;
-  if (input === SECRET) {
-    localStorage.setItem("mivo_access", "ok");
-    window.location.href = "index.html";
-  } else {
-    alert("Code incorrect");
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff3cd;
+    color: #856404;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
   }
-}
-</script>
-
+  .warning-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="warning-icon">⚠️</div>
+  <h1>Site en maintenance</h1>
+  <p>Nous travaillons actuellement sur le site. Merci de votre patience !</p>
 </body>
 </html>
