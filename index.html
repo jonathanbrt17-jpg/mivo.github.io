@@ -6,7 +6,10 @@
     <title>MIVO</title>
     <link rel="stylesheet" href="style.css">
 </script>
-</head>
+<script>
+if (localStorage.getItem("mivo_access") !== "ok") {
+  window.location.href = "maintenance.html";
+}</head>
 <body>
 
 <header class="header">
