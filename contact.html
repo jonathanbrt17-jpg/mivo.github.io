@@ -6,6 +6,11 @@
   <title>MIVO — Contact</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+<script>
+if (localStorage.getItem("mivo_access") !== "ok") {
+  window.location.href = "maintenance.html";
+}
+</script>
 </head>
 
 <body>
