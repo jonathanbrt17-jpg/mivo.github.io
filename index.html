@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mivo — Noël</title>
+<title>Mivo — Maintenance de Noël</title>
 
 <style>
 :root{
-  --mivo-main:#00d4ff;
+  --mivo:#00d4ff;
   --mivo-dark:#0a2540;
-  --mivo-light:#7fe9ff;
   --gold:#ffd700;
 }
 
@@ -21,73 +20,63 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   color:#fff;
   overflow:hidden;
-  transition:background 1s;
+  background:linear-gradient(135deg,#141e30,#243b55);
 }
 
-/* 🌙☀️ JOUR / NUIT */
-body.day{
-  background:linear-gradient(180deg,#9be7ff,#dff6ff);
-  color:#06344f;
-}
-body.night{
-  background:linear-gradient(180deg,var(--mivo-dark),#020b18);
-}
-
-/* ❄️ NEIGE (NUIT) */
-.night .snow,.night .snow2{
+/* ❄️ NEIGE */
+.snow,.snow2{
   position:fixed;inset:0;
   pointer-events:none;
 }
 .snow{
   background-image:radial-gradient(2px 2px at 20% 30%,#fff,transparent);
-  animation:snow 12s linear infinite;
+  animation:snow 14s linear infinite;
 }
 .snow2{
   background-image:radial-gradient(1px 1px at 70% 60%,#fff,transparent);
-  animation:snow 20s linear infinite;
+  animation:snow 22s linear infinite;
   opacity:.6;
 }
 @keyframes snow{to{transform:translateY(100vh)}}
 
-/* 🌲 SAPIN */
+/* 🌲 SAPIN SUR LE CÔTÉ */
 .tree-zone{
   position:fixed;
-  left:50%;
+  left:20px;
   bottom:0;
-  transform:translateX(-50%);
-  width:360px;
+  width:300px;
   z-index:1;
 }
 .tree .layer{
-  height:140px;
-  background:linear-gradient(to top,#0a6b3c,#2ddc91);
+  height:120px;
+  background:linear-gradient(to top,#0b5f2f,#20d38a);
   clip-path:polygon(50% 0,0 100%,100% 100%);
-  margin-top:-40px;
+  margin-top:-36px;
 }
 
 /* ⭐ */
 .star{
   text-align:center;
-  font-size:2.6rem;
-  animation:twinkle 1.2s infinite;
+  font-size:2.4rem;
+  animation:twinkle 1.3s infinite;
 }
 @keyframes twinkle{50%{opacity:.5}}
 
-/* 💡 GUIRLANDE MIVO */
+/* 💡 GUIRLANDE */
 .light{
   position:absolute;
   width:10px;height:10px;
   border-radius:50%;
-  background:var(--mivo-main);
-  box-shadow:0 0 12px var(--mivo-main);
-  animation:blink 1.5s infinite alternate;
+  background:var(--mivo);
+  box-shadow:0 0 12px var(--mivo);
+  animation:blink 1.6s infinite alternate;
 }
 @keyframes blink{to{opacity:.4}}
 
 /* 🔵 BOULES LOGO */
 .ball{
   position:absolute;
-  width:36px;height:36px;
+  width:34px;height:34px;
   border-radius:50%;
   background:#fff;
   display:flex;
@@ -97,14 +86,14 @@ body.night{
 }
 .ball img{width:80%;height:80%;object-fit:contain}
 @keyframes glow{
-  from{box-shadow:0 0 6px var(--mivo-main)}
-  to{box-shadow:0 0 20px var(--mivo-main)}
+  from{box-shadow:0 0 6px var(--mivo)}
+  to{box-shadow:0 0 18px var(--mivo)}
 }
-.b1{top:120px;left:45%}
-.b2{top:170px;left:35%}
-.b3{top:170px;left:55%}
+.b1{top:110px;left:40%}
+.b2{top:155px;left:30%}
+.b3{top:155px;left:55%}
 
-/* 🎁 CADEAUX ANIMÉS */
+/* 🎁 CADEAUX (CÔTÉ DROIT) */
 .gifts{
   position:fixed;
   right:30px;
@@ -115,10 +104,10 @@ body.night{
 }
 .gift{
   width:52px;height:42px;
-  background:var(--mivo-main);
+  background:var(--mivo);
   border-radius:6px;
   position:relative;
-  animation:giftBounce 2.2s ease-in-out infinite;
+  animation:giftBounce 2.4s ease-in-out infinite;
 }
 .gift:nth-child(2){animation-delay:.4s}
 .gift:nth-child(3){animation-delay:.8s}
@@ -131,25 +120,25 @@ body.night{
 .gift:before{width:8px;height:100%;left:50%;transform:translateX(-50%)}
 .gift:after{height:8px;width:100%;top:50%;transform:translateY(-50%)}
 
-/* 📦 CONTENU */
+/* 📦 CONTENU CENTRAL */
 .container{
   position:relative;
   z-index:2;
   max-width:520px;
-  margin:32px auto;
+  margin:40px auto;
   text-align:center;
-  padding:20px;
+  padding:22px;
 }
 
 /* 🟢 LOGO */
 .logo{
   width:110px;height:110px;
-  margin:0 auto 14px;
+  margin:0 auto 16px;
   border-radius:50%;
   background:rgba(255,255,255,.25);
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   overflow:hidden;
   animation:float 4s ease-in-out infinite;
 }
@@ -160,14 +149,15 @@ body.night{
 .countdown{
   display:flex;
   justify-content:center;
-  gap:8px;
+  gap:10px;
   flex-wrap:wrap;
-  margin:14px 0;
+  margin:16px 0;
 }
 .time{
-  background:rgba(255,255,255,.25);
-  padding:8px 12px;
+  background:rgba(255,255,255,.2);
+  padding:10px 14px;
   border-radius:12px;
+  min-width:65px;
 }
 
 /* 🔘 BOUTONS */
@@ -179,27 +169,21 @@ body.night{
   font-weight:700;
   text-decoration:none;
 }
-.donate{
-  background:var(--gold);
-  color:#000;
-}
-.discord{
-  background:#5865F2;
-  color:#fff;
-}
+.donate{background:var(--gold);color:#000}
+.discord{background:#5865F2;color:#fff}
 
 /* 🎆 FEU D'ARTIFICE */
 .firework{
   position:fixed;
   width:6px;height:6px;
   border-radius:50%;
-  background:var(--mivo-main);
+  background:var(--mivo);
   animation:boom 1.2s forwards;
 }
 @keyframes boom{to{transform:scale(6);opacity:0}}
 
 @media(max-width:480px){
-  .tree-zone{width:280px}
+  .tree-zone{width:220px;left:10px}
   .gifts{right:10px}
 }
 </style>
@@ -210,7 +194,7 @@ body.night{
 <div class="snow"></div>
 <div class="snow2"></div>
 
-<!-- 🌲 SAPIN -->
+<!-- 🌲 SAPIN À GAUCHE -->
 <div class="tree-zone">
   <div class="star">⭐</div>
 
@@ -221,12 +205,11 @@ body.night{
   </div>
 
   <!-- 💡 GUIRLANDE -->
-  <div class="light" style="top:120px;left:30%"></div>
-  <div class="light" style="top:130px;left:45%"></div>
-  <div class="light" style="top:140px;left:60%"></div>
-  <div class="light" style="top:180px;left:35%"></div>
-  <div class="light" style="top:190px;left:50%"></div>
-  <div class="light" style="top:200px;left:65%"></div>
+  <div class="light" style="top:110px;left:25%"></div>
+  <div class="light" style="top:125px;left:45%"></div>
+  <div class="light" style="top:140px;left:65%"></div>
+  <div class="light" style="top:170px;left:35%"></div>
+  <div class="light" style="top:185px;left:55%"></div>
 
   <!-- 🔵 BOULES -->
   <div class="ball b1"><img src="logo-mivo.png"></div>
@@ -246,7 +229,7 @@ body.night{
   <div class="logo"><img src="logo-mivo.png"></div>
 
   <h1>Maintenance de Noël</h1>
-  <p>Merci à toutes les personnes qui ont visité et soutenu <strong>Mivo</strong> 💙</p>
+  <p>Merci à toutes les personnes qui visitent et soutiennent <strong>Mivo</strong> 💙</p>
 
   <div class="countdown">
     <div class="time"><span id="d">0</span><br>Jours</div>
@@ -265,15 +248,11 @@ body.night{
 </div>
 
 <script>
-/* 🌙☀️ MODE AUTO */
-const hour=new Date().getHours();
-document.body.classList.add(hour>=7&&hour<18?"day":"night");
-
-/* ⏱️ COMPTE À REBOURS + 🎆 */
+/* ⏱️ + 🎆 */
 const target=new Date(2025,11,25,0,0,0).getTime();
 
 function fireworks(){
-  for(let i=0;i<25;i++){
+  for(let i=0;i<20;i++){
     const f=document.createElement("div");
     f.className="firework";
     f.style.left=Math.random()*100+"vw";
