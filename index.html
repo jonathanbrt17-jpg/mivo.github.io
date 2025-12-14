@@ -2,17 +2,21 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Mivo — Noël</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin:0;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family:"Segoe UI",Arial,sans-serif;
+  font-family:"Segoe UI", Arial, sans-serif;
   color:#fff;
   text-align:center;
   overflow:hidden;
@@ -24,10 +28,10 @@ body.day {
   background:linear-gradient(135deg,#b31217,#1e7e34);
 }
 body.night {
-  background:linear-gradient(135deg,#4b0000,#052e1c);
+  background:linear-gradient(135deg,#3a0000,#052e1c);
 }
 
-/* ❄️ Neige */
+/* ❄️ Neige + ⭐ étoiles */
 .snow, .stars {
   position:fixed;
   inset:0;
@@ -36,112 +40,110 @@ body.night {
 
 .snow {
   background-image:
-    radial-gradient(2px 2px at 10% 20%, #fff, transparent),
-    radial-gradient(2px 2px at 30% 60%, #fff, transparent),
-    radial-gradient(2px 2px at 60% 40%, #fff, transparent),
+    radial-gradient(2px 2px at 15% 20%, #fff, transparent),
+    radial-gradient(2px 2px at 35% 50%, #fff, transparent),
+    radial-gradient(2px 2px at 60% 30%, #fff, transparent),
     radial-gradient(2px 2px at 80% 80%, #fff, transparent);
-  animation:snow 10s linear infinite;
+  animation:snow 12s linear infinite;
 }
 
 @keyframes snow {
-  from { transform:translateY(-50px); }
+  from { transform:translateY(-60px); }
   to { transform:translateY(100vh); }
 }
 
-/* ⭐ Étoiles (nuit seulement) */
 .stars {
   opacity:0;
   background-image:
-    radial-gradient(1px 1px at 15% 20%, gold, transparent),
-    radial-gradient(1px 1px at 45% 10%, gold, transparent),
-    radial-gradient(1px 1px at 70% 25%, gold, transparent),
-    radial-gradient(1px 1px at 85% 60%, gold, transparent);
+    radial-gradient(1px 1px at 20% 20%, gold, transparent),
+    radial-gradient(1px 1px at 50% 10%, gold, transparent),
+    radial-gradient(1px 1px at 70% 30%, gold, transparent);
   animation:twinkle 4s ease-in-out infinite;
 }
 
 body.night .stars { opacity:1; }
 
 @keyframes twinkle {
-  0%,100% {opacity:.5}
+  0%,100% {opacity:.6}
   50% {opacity:1}
 }
 
-/* 🎅 Père Noël */
+/* 🎅 Père Noël (plus léger pour mobile) */
 .santa {
   position:fixed;
-  top:15%;
-  left:-200px;
-  font-size:3rem;
-  animation:santaFly 18s linear infinite;
+  top:12%;
+  left:-180px;
+  font-size:2.5rem;
+  animation:santaFly 20s linear infinite;
   pointer-events:none;
 }
 
 @keyframes santaFly {
-  from { transform:translateX(-200px); }
+  from { transform:translateX(-180px); }
   to { transform:translateX(110vw); }
 }
 
+/* 📦 Contenu */
 .container {
   position:relative;
-  padding:28px;
-  max-width:620px;
-  animation:fadeIn 1.2s ease-in-out;
+  width:100%;
+  max-width:520px;
+  padding:22px;
+  margin:10px;
+  animation:fadeIn 1s ease-in-out;
 }
 
 .logo {
-  width:120px;
-  height:120px;
-  margin:0 auto 18px;
+  width:95px;
+  height:95px;
+  margin:0 auto 14px;
   border-radius:50%;
   background:rgba(255,255,255,.25);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:1.6rem;
+  font-size:1.4rem;
   font-weight:bold;
-  animation:float 4s ease-in-out infinite;
 }
 
-h1 { font-size:2.6rem; margin-bottom:8px; }
-p { margin:8px 0; }
+h1 {
+  font-size:2.1rem;
+  margin-bottom:6px;
+}
 
-.highlight { color:#ffd700; font-weight:600; }
+p {
+  margin:8px 0;
+  font-size:0.95rem;
+  line-height:1.4;
+}
 
+.highlight {
+  color:#ffd700;
+  font-weight:600;
+}
+
+/* ⏱️ Compte à rebours */
 .countdown {
   display:flex;
   justify-content:center;
-  gap:10px;
-  margin:18px 0;
+  gap:8px;
+  margin:14px 0;
   flex-wrap:wrap;
 }
 
 .time-box {
   background:rgba(255,255,255,.25);
-  border-radius:14px;
-  padding:10px 16px;
-  min-width:70px;
-  animation:pulse 1.5s infinite;
+  border-radius:12px;
+  padding:8px 12px;
+  min-width:65px;
 }
 
-.time-box span { font-size:1.5rem; font-weight:bold; }
-
-.discord-btn {
-  margin-top:14px;
-  padding:12px 22px;
-  border-radius:30px;
-  font-weight:600;
-  background:#5865F2;
-  color:#fff;
-  text-decoration:none;
+.time-box span {
+  font-size:1.3rem;
+  font-weight:bold;
 }
 
-#finalMessage {
-  display:none;
-  margin-top:20px;
-  font-size:1.4rem;
-}
-
-/* 🎆 Feu d'artifice */
+/* 🎆 Feu d’artifice */
 .firework {
   position:fixed;
   width:6px;
@@ -156,17 +158,35 @@ p { margin:8px 0; }
   to { transform:scale(6); opacity:0; }
 }
 
+/* 🔘 Bouton */
+.discord-btn {
+  display:inline-block;
+  margin-top:14px;
+  padding:11px 22px;
+  border-radius:28px;
+  background:#5865F2;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.95rem;
+}
+
+/* 🎄 Message final */
+#finalMessage {
+  display:none;
+  margin-top:16px;
+  font-size:1.1rem;
+}
+
+/* 📱 Mobile */
+@media (max-width:480px){
+  h1 { font-size:1.8rem; }
+  .logo { width:80px; height:80px; font-size:1.2rem; }
+  .santa { font-size:2rem; }
+}
 @keyframes fadeIn {
-  from {opacity:0; transform:translateY(15px)}
+  from {opacity:0; transform:translateY(12px)}
   to {opacity:1; transform:translateY(0)}
-}
-@keyframes float {
-  0%,100% {transform:translateY(0)}
-  50% {transform:translateY(-8px)}
-}
-@keyframes pulse {
-  0%,100% {transform:scale(1)}
-  50% {transform:scale(1.05)}
 }
 </style>
 </head>
@@ -180,7 +200,11 @@ p { margin:8px 0; }
   <div class="logo">🎄 MIVO</div>
 
   <h1>Maintenance de Noël</h1>
-  <p>Une <span class="highlight">surprise magique</span> arrive ✨</p>
+
+  <p>
+    Le site <span class="highlight">Mivo</span> prépare une
+    <span class="highlight">surprise spéciale</span> pour les fêtes ✨
+  </p>
 
   <div class="countdown" id="countdown">
     <div class="time-box"><span id="days">0</span><small>Jours</small></div>
@@ -191,21 +215,23 @@ p { margin:8px 0; }
 
   <div id="finalMessage">
     🎄 <strong>Joyeux Noël !</strong> 🎄<br>
-    Dès demain, votre site sera disponible 🎁
+    Le site sera disponible dès demain 🎁<br><br>
+    💙 <strong>Merci à toutes les personnes qui ont visité le site,<br>
+    votre soutien compte énormément.</strong>
   </div>
 
   <a class="discord-btn" href="https://discord.gg/gwxEBGTG2P" target="_blank">
-    🎁 Discord Mivo
+    💬 Rejoindre le Discord Mivo
   </a>
 </div>
 
 <script>
-/* 🎄 Date */
+/* 🎄 Date Noël */
 const targetDate = new Date(2025,11,25,0,0,0).getTime();
 
-/* 🌞 / 🌙 Jour Nuit auto */
-const hour = new Date().getHours();
-document.body.classList.add(hour >= 8 && hour < 18 ? "day" : "night");
+/* 🌞 / 🌙 Jour Nuit (compatible iPhone) */
+const h = new Date().getHours();
+document.body.classList.add(h >= 8 && h < 18 ? "day" : "night");
 
 /* ⏱️ Compte à rebours */
 function update(){
@@ -216,17 +242,17 @@ function update(){
     fireworks();
     return;
   }
-  days.textContent=Math.floor(d/86400000);
-  hours.textContent=Math.floor((d%86400000)/3600000);
-  minutes.textContent=Math.floor((d%3600000)/60000);
-  seconds.textContent=Math.floor((d%60000)/1000);
+  days.textContent = Math.floor(d / 86400000);
+  hours.textContent = Math.floor((d % 86400000) / 3600000);
+  minutes.textContent = Math.floor((d % 3600000) / 60000);
+  seconds.textContent = Math.floor((d % 60000) / 1000);
 }
 setInterval(update,1000);
 update();
 
-/* 🎆 Feu d’artifice */
+/* 🎆 Feu d’artifice (léger mobile) */
 function fireworks(){
-  for(let i=0;i<30;i++){
+  for(let i=0;i<20;i++){
     const f=document.createElement("div");
     f.className="firework";
     f.style.left=Math.random()*100+"vw";
