@@ -29,7 +29,7 @@ body.night {
   background:linear-gradient(135deg,#3a0000,#052e1c);
 }
 
-/* ❄️ Neige + ⭐ Étoiles */
+/* ❄️ Neige + ⭐ étoiles */
 .snow, .stars {
   position:fixed;
   inset:0;
@@ -91,7 +91,7 @@ body.night .stars { opacity:1; }
   animation:fadeIn 1s ease-in-out;
 }
 
-/* 🟢 LOGO MIVO */
+/* 🟢 LOGO MIVO FLOTTANT ARRONDI */
 .logo {
   width:110px;
   height:110px;
@@ -101,6 +101,8 @@ body.night .stars { opacity:1; }
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
+  animation:floatLogo 3s ease-in-out infinite alternate;
 }
 
 .logo img {
@@ -189,9 +191,16 @@ p {
   .santa { font-size:2rem; }
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {opacity:0; transform:translateY(12px)}
   to {opacity:1; transform:translateY(0)}
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 </style>
 </head>
@@ -203,7 +212,7 @@ p {
 
 <div class="container">
 
-  <!-- 🟢 LOGO MIVO -->
+  <!-- 🟢 LOGO MIVO FLOTTANT -->
   <div class="logo">
     <img src="logo-mivo.png" alt="Logo Mivo">
   </div>
