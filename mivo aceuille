@@ -1,40 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIVO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <img src="mivo.png" alt="Logo MIVO" class="logo">
+
+    <div class="header-text">
+        <h1>MIVO</h1>
+        <p>Parler, c’est déjà guérir.</p>
+    </div>
+
+    <nav>
+        <a href="apropos.html">À propos</a>
+        <a href="info.html">Infos</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="don.html">Don</a>
+        <a href="urgence.html" class="urgence">⚠️ Urgence</a>
+    </nav>
+</header>
+
 <main class="content">
     <h2>Bienvenue sur MIVO</h2>
 
-    <p style="font-weight:bold; color:#b00000;">
-        ⚠️ Attention — Ces informations sont importantes ⚠️
+    <p style="color:#b00000; font-weight:bold;">
+        ⚠️ Attention — Merci de prendre connaissance des informations ci-dessous
     </p>
 
     <p>
-        MIVO est une association née d’une réalité trop souvent ignorée :
-        celle de personnes qui souffrent en silence.
+  MIVO est une association née d’un constat simple mais alarmant :
+        trop de personnes, jeunes comme adultes, souffrent en silence.
     </p>
 
     <p>
-        Harcèlement, cyberharcèlement, détresse mentale…
-        Ces mots ne sont pas juste des termes.
-        Ils représentent des blessures invisibles,
-        des nuits sans sommeil,
-        des messages qui détruisent,
-        et parfois un sentiment profond d’abandon.
+        Harcèlement, cyberharcèlement, détresse psychologique…
+        Ces réalités détruisent l’estime de soi, isolent,
+        et peuvent laisser des blessures profondes et durables.
     </p>
 
     <p>
-        Trop de jeunes, mais aussi d’adultes,
-        vivent ces situations sans oser en parler,
-        par peur, par honte ou par manque de soutien.
+        Derrière chaque message blessant,
+        chaque moquerie répétée,
+        chaque pression en ligne,
+        il y a une personne qui lutte.
     </p>
 
     <p>
         La santé mentale n’est <strong>pas un jeu</strong>.  
-        Le harcèlement n’est <strong>jamais anodin</strong>.
-        Une parole peut marquer une vie,
-        un message peut briser une confiance,
-        et le silence peut faire encore plus de dégâts.
+        Le harcèlement n’est <strong>jamais banal</strong>.
+        Le silence, lui, peut être destructeur.
     </p>
 
     <p>
-        Aujourd’hui, les chiffres sont alarmants :
+        Aujourd’hui, les chiffres parlent d’eux-mêmes :
     </p>
 
     <ul>
@@ -44,34 +69,49 @@
             sont touchés par des troubles liés à la santé mentale.
         </li>
         <li>
-            <strong>7 % des jeunes</strong> déclarent avoir été victimes
+            Près de <strong>7 % des jeunes</strong> déclarent avoir été victimes
             de harcèlement ou de cyberharcèlement,
             soit près de <strong>cinq millions d’enfants</strong>.
         </li>
     </ul>
 
     <p>
-        Derrière ces chiffres, il y a des visages,
-        des histoires, des vies réelles.
+        Ces chiffres représentent des vies,
+        des parcours fragiles,
+        des appels à l’aide trop souvent ignorés.
     </p>
 
     <p>
-        MIVO existe pour rappeler une chose essentielle :
-        <strong>personne ne devrait affronter ça seul</strong>.
+        MIVO existe pour offrir un espace d’écoute,
+        de soutien et de respect,
+        sans jugement et en toute confidentialité.
     </p>
 
     <p>
-        Nous proposons une écoute attentive,
-        un soutien humain,
-        un accompagnement bienveillant,
-        et bientôt des solutions alternatives
-        comme l’art-thérapie et l’équithérapie,
-        pour permettre à chacun de s’exprimer autrement.
+        La santé mentale n’est pas un jeu.
+        Le harcèlement, qu’il soit en ligne ou dans la vie réelle,
+        peut laisser des blessures profondes et durables.
     </p>
 
-    <p style="font-weight:bold;">
-        Vous n’êtes pas faible de demander de l’aide.  
-        Vous êtes courageux.
+    <p>
+        Aujourd’hui, de nombreuses personnes souffrent en silence.
+        Derrière chaque chiffre, il y a une histoire, une personne,
+        parfois une détresse invisible.
+    </p>
+
+    <p>
+        MIVO existe pour offrir :
+    </p>
+
+    <ul>
+        <li>Une écoute bienveillante et sans jugement</li>
+        <li>Un accompagnement face au harcèlement et au cyberharcèlement</li>
+        <li>Un soutien autour de la santé mentale</li>
+        <li>Des solutions alternatives à venir (art-thérapie, équithérapie)</li>
+    </ul>
+
+    <p>
+        Demander de l’aide est un acte de courage.
     </p>
 
     <p style="font-weight:bold;">
@@ -79,3 +119,10 @@
         MIVO se construit avec vous, pour vous.
     </p>
 </main>
+
+<footer class="footer">
+    <p>© 2025 - MIVO. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
