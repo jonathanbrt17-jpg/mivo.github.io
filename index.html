@@ -4,36 +4,120 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MIVO — Maintenance</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+      background: linear-gradient(180deg, #020617, #020617);
+      color: #e5e7eb;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
       text-align: center;
     }
+
     .box {
-      max-width: 500px;
-      padding: 30px;
+      max-width: 520px;
+      padding: 35px;
       background: #020617;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,.5);
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,.7);
     }
-    h1 { margin-bottom: 10px; }
-    p { opacity: .9; }
+
+    h1 {
+      margin-bottom: 15px;
+      color: #60a5fa;
+    }
+
+    p {
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .timer {
+      margin: 25px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .small {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      margin-top: 15px;
+    }
   </style>
 </head>
+
 <body>
   <div class="box">
-    <h1>🛠 Site en maintenance</h1>
+    <h1>🛠 Maintenance en cours</h1>
+
     <p>
-      Le site MIVO est temporairement indisponible.<br>
-      Nous revenons très bientôt 💙
+      Une maintenance <strong>non prévue</strong> est actuellement en cours
+      suite à un <strong>bug système</strong>.
     </p>
+
+    <p>
+      Nous vous remercions de votre compréhension et nous nous excusons
+      pour toute la gêne occasionnée.
+    </p>
+
+    <div class="timer" id="countdown">
+      Chargement du compte à rebours…
+    </div>
+
+    <div class="contact">
+      📞 <a href="tel:0752995625">07 52 99 56 25</a><br>
+      📧 <a href="mailto:mivoasso@proton.me">mivoasso@proton.me</a>
+    </div>
+
+    <div class="small">
+      © 2025–2026 — MIVO
+    </div>
   </div>
+
+  <script>
+    const targetDate = new Date("2026-02-20T18:00:00").getTime();
+    const countdown = document.getElementById("countdown");
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdown.innerHTML = "✅ La maintenance est terminée.";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML =
+        `⏳ Reprise prévue dans ${days}j ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
 </body>
 </html>
