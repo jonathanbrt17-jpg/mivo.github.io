@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIVO — Admin</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .box {
+      width: 420px;
+      padding: 30px;
+      background: #020617;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,.7);
+    }
+
+    input, textarea, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    textarea { height: 120px; }
+
+    button {
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+    <!-- LOGIN -->
+    <div id="login">
+      <h2>🔐 Accès administrateur</h2>
+      <input type="password" id="code" placeholder="Code admin">
+      <button onclick="login()">Entrer</button>
+    </div>
+
+    <!-- PANEL -->
+    <div id="panel" class="hidden">
+      <h2>✏️ Message maintenance</h2>
+      <textarea id="message"></textarea>
+      <button onclick="save()">Enregistrer</button>
+    </div>
+
+  </div>
+
+  <script>
+    const ADMIN_CODE = "MIVO2026";
+
+    function login() {
+      if (document.getElementById("code").value === ADMIN_CODE) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("panel").style.display = "block";
+        document.getElementById("message").value =
+          localStorage.getItem("mivo_admin_message") || "";
+      } else {
+        alert("Code incorrect");
+      }
+    }
+
+    function save() {
+      localStorage.setItem(
+        "mivo_admin_message",
+        document.getElementById("message").value
+      );
+      alert("Message enregistré ✅");
+    }
+  </script>
+</body>
+</html>
