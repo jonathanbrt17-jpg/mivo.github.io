@@ -8,7 +8,7 @@ body {
 .header {
     background: linear-gradient(90deg, #3f68ff, #3552cc);
     color: white;
-    padding: 15px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -18,9 +18,9 @@ body {
 .logo {
     width: 70px;
     height: auto;
-    border-radius: 12px;
     background: white;
-    padding: 5px;
+    padding: 6px;
+    border-radius: 12px;
 }
 
 .header-text h1 {
@@ -30,6 +30,7 @@ body {
 
 .header-text p {
     margin: 0;
+    font-size: 14px;
     opacity: 0.9;
 }
 
@@ -37,7 +38,7 @@ body {
 nav {
     margin-left: auto;
     display: flex;
-    gap: 14px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -45,47 +46,45 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 6px 10px;
-    border-radius: 6px;
+    font-size: 15px;
 }
 
 nav a:hover {
-    background: rgba(255,255,255,0.2);
+    text-decoration: underline;
 }
 
 /* URGENCE */
 .urgence {
-    background: #ff2d2d;
+    background: #ff3b3b;
+    padding: 6px 12px;
+    border-radius: 6px;
 }
 
 .urgence:hover {
-    background: #cc0000;
+    background: #d62828;
 }
 
-/* CONTENU */
+/* CONTENT */
 .content {
     padding: 30px;
 }
 
 h2 {
     color: #2b2b2b;
-    font-size: 28px;
 }
 
 p {
-    font-size: 17px;
     color: #444;
     line-height: 1.6;
 }
 
 /* FOOTER */
 .footer {
+    background: #e3e5ef;
     text-align: center;
     padding: 20px;
-    background: #e3e5ef;
     margin-top: 40px;
-    color: #333;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 /* MOBILE */
@@ -97,13 +96,5 @@ p {
 
     nav {
         justify-content: center;
-        margin-left: 0;
     }
 }
-img.logo {
-    width: 70px !important;
-    max-width: 70px !important;
-    height: auto !important;
-    display: block;
-}
-
