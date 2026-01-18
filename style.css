@@ -1,231 +1,118 @@
-/* =========================
-   RESET & BASE
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-}
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6f8;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
   color: #222;
-  line-height: 1.6;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* BARRE HAUTE BLEUE */
 .header {
-  background: #ffffff;
-  border-bottom: 2px solid #e5e5e5;
-  padding: 15px 20px;
+  background: #0a5cff;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
+/* LOGO */
 .logo {
-  width: 60px;
-  height: auto;
+  width: 45px;
+  margin-right: 12px;
 }
 
-.header-text {
-  flex: 1;
-  margin-left: 15px;
-}
-
+/* TEXTE */
 .header-text h1 {
-  font-size: 1.8rem;
-  color: #0077ff;
+  font-size: 1.3rem;
+  color: white;
 }
 
 .header-text p {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 0.8rem;
+  color: #dbe6ff;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
-.nav,
+/* NAV */
 nav {
+  margin-left: auto;
   display: flex;
-  gap: 15px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
-.nav a,
 nav a {
+  background: white;
+  color: #0a5cff;
   text-decoration: none;
-  color: #333;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 4px;
   font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
 }
 
-.nav a:hover,
 nav a:hover {
-  background: #eaf1ff;
+  background: #e3ebff;
 }
 
-/* Bouton urgence */
+/* URGENCE */
 .urgence {
-  background: #e53935;
-  color: #fff !important;
+  background: #e53935 !important;
+  color: white !important;
 }
 
-.urgence:hover {
-  background: #c62828;
-}
-
-/* =========================
-   CONTENU
-========================= */
-.container,
-.content {
-  max-width: 1000px;
-  margin: 30px auto;
+/* CONTENU */
+.content,
+.container {
+  background: white;
+  max-width: 900px;
+  margin: 20px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.section h2,
-.content h2 {
-  color: #0077ff;
-  margin-bottom: 15px;
-}
-
-p {
-  margin-bottom: 15px;
-}
-
-ul {
-  margin: 15px 0 15px 25px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-/* =========================
-   FORMULAIRES
-========================= */
-.form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.form input,
-.form select,
-.form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
   border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
 }
 
-.form textarea {
-  min-height: 120px;
-  resize: vertical;
+h2 {
+  color: #0a5cff;
+  margin-bottom: 10px;
 }
 
-.form input:focus,
-.form select:focus,
-.form textarea:focus {
-  outline: none;
-  border-color: #0077ff;
+p, li {
+  margin-bottom: 10px;
 }
 
-/* =========================
-   BOUTONS
-========================= */
+/* BOUTONS */
 .btn-big {
-  background: #0077ff;
-  color: #fff;
-  padding: 14px 25px;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+  background: #0a5cff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
   font-weight: bold;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: inline-block;
 }
 
-.btn-big:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,119,255,0.3);
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer,
+/* FOOTER */
 footer {
-  background: #ffffff;
-  border-top: 2px solid #e5e5e5;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 0.9rem;
+  padding: 15px;
+  font-size: 0.8rem;
   color: #666;
 }
 
-/* =========================
-   ALERTES / INFO
-========================= */
-.alert {
-  background: #fff3cd;
-  color: #856404;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #ffeeba;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-/* =========================
-   RESPONSIVE MOBILE
-========================= */
+/* MOBILE */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header-text {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-
-  .nav,
   nav {
     width: 100%;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
-  .nav a,
   nav a {
-    flex: 1 1 45%;
-    text-align: center;
-  }
-
-  .container,
-  .content {
-    margin: 15px;
-    padding: 15px;
+    font-size: 0.8rem;
+    padding: 6px 8px;
   }
 }
